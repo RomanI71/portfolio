@@ -1,10 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WebsiteController;
+use App\Http\Controllers\DashboardController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/',[WebsiteController::class,'GetMyWebsiteData'])->name('mywebsite');
+Route::get('/mydashboard',[DashboardController::class,'mydashboard'])->name('mydashboard');
 
 
 Route::get('/contact',function(){
